@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.malighting.de/grandma2/xml/MA" xsi:schemaLocation="http://schemas.malighting.de/grandma2/xml/MA http://schemas.malighting.de/grandma2/xml/3.5.0/MA.xsd" major_vers="3" minor_vers="5" stream_vers="0">
+	<Info datetime="2018-12-19T14:02:37" showfile="learn grandma2 - ep01 download and setup" />
+	<DMXRemotes index="2">
+		<RemoteDMX index="0" addr="50688" type="exec" exec="100" />
+		<RemoteDMX index="1" addr="50689" type="exec" />
+		<RemoteDMX index="2" addr="50690" type="exec" button_type="fader" />
+		<RemoteDMX index="3" addr="50691" type="exec" button_type="above_fader" />
+		<RemoteDMX index="4" addr="50692" type="exec" button_type="top" />
+		<RemoteDMX index="5" addr="50693" type="exec" exec="101" />
+		<RemoteDMX index="6" addr="50694" type="exec" exec="1" />
+		<RemoteDMX index="7" addr="50695" type="exec" exec="1" button_type="fader" />
+		<RemoteDMX index="8" addr="50696" type="exec" exec="1" button_type="above_fader" />
+		<RemoteDMX index="9" addr="50697" type="exec" exec="1" button_type="top" />
+		<RemoteDMX index="10" addr="50698" type="exec" exec="102" />
+		<RemoteDMX index="11" addr="50699" type="exec" exec="2" />
+		<RemoteDMX index="12" addr="50700" type="exec" exec="2" button_type="fader" />
+		<RemoteDMX index="13" addr="50701" type="exec" exec="2" button_type="above_fader" />
+		<RemoteDMX index="14" addr="50702" type="exec" exec="2" button_type="top" />
+		<RemoteDMX index="15" addr="50703" type="exec" exec="103" />
+		<RemoteDMX index="16" addr="50704" type="exec" exec="3" />
+		<RemoteDMX index="17" addr="50705" type="exec" exec="3" button_type="fader" />
+		<RemoteDMX index="18" addr="50706" type="exec" exec="3" button_type="above_fader" />
+		<RemoteDMX index="19" addr="50707" type="exec" exec="3" button_type="top" />
+		<RemoteDMX index="20" addr="50708" type="exec" exec="104" />
+		<RemoteDMX index="21" addr="50709" type="exec" exec="4" />
+		<RemoteDMX index="22" addr="50710" type="exec" exec="4" button_type="fader" />
+		<RemoteDMX index="23" addr="50711" type="exec" exec="4" button_type="above_fader" />
+		<RemoteDMX index="24" addr="50712" type="exec" exec="4" button_type="top" />
+		<RemoteDMX index="25" addr="50713" type="exec" exec="105" />
+		<RemoteDMX index="26" addr="50714" type="exec" exec="5" />
+		<RemoteDMX index="27" addr="50715" type="exec" exec="5" button_type="fader" />
+		<RemoteDMX index="28" addr="50716" type="exec" exec="5" button_type="above_fader" />
+		<RemoteDMX index="29" addr="50717" type="exec" exec="5" button_type="top" />
+		<RemoteDMX index="30" addr="50718" type="exec" exec="106" />
+		<RemoteDMX index="31" addr="50719" type="exec" exec="6" />
+		<RemoteDMX index="32" addr="50720" type="exec" exec="6" button_type="fader" />
+		<RemoteDMX index="33" addr="50721" type="exec" exec="6" button_type="above_fader" />
+		<RemoteDMX index="34" addr="50722" type="exec" exec="6" button_type="top" />
+		<RemoteDMX index="35" addr="50723" type="exec" exec="107" />
+		<RemoteDMX index="36" addr="50724" type="exec" exec="7" />
+		<RemoteDMX index="37" addr="50725" type="exec" exec="7" button_type="fader" />
+		<RemoteDMX index="38" addr="50726" type="exec" exec="7" button_type="above_fader" />
+		<RemoteDMX index="39" addr="50727" type="exec" exec="7" button_type="top" />
+		<RemoteDMX index="40" addr="50728" type="exec" exec="108" />
+		<RemoteDMX index="41" addr="50729" type="exec" exec="8" />
+		<RemoteDMX index="42" addr="50730" type="exec" exec="8" button_type="fader" />
+		<RemoteDMX index="43" addr="50731" type="exec" exec="8" button_type="above_fader" />
+		<RemoteDMX index="44" addr="50732" type="exec" exec="8" button_type="top" />
+		<RemoteDMX index="45" addr="50733" type="exec" exec="109" />
+		<RemoteDMX index="46" addr="50734" type="exec" exec="9" />
+		<RemoteDMX index="47" addr="50735" type="exec" exec="9" button_type="fader" />
+		<RemoteDMX index="48" addr="50736" type="exec" exec="9" button_type="above_fader" />
+		<RemoteDMX index="49" addr="50737" type="exec" exec="9" button_type="top" />
+		<RemoteDMX index="50" addr="50738" type="exec" exec="110" />
+		<RemoteDMX index="51" addr="50739" type="exec" exec="10" />
+		<RemoteDMX index="52" addr="50740" type="exec" exec="10" button_type="fader" />
+		<RemoteDMX index="53" addr="50741" type="exec" exec="10" button_type="above_fader" />
+		<RemoteDMX index="54" addr="50742" type="exec" exec="10" button_type="top" />
+		<RemoteDMX index="55" addr="50743" type="exec" exec="111" />
+		<RemoteDMX index="56" addr="50744" type="exec" exec="11" />
+		<RemoteDMX index="57" addr="50745" type="exec" exec="11" button_type="fader" />
+		<RemoteDMX index="58" addr="50746" type="exec" exec="11" button_type="above_fader" />
+		<RemoteDMX index="59" addr="50747" type="exec" exec="11" button_type="top" />
+		<RemoteDMX index="60" addr="50748" type="exec" exec="112" />
+		<RemoteDMX index="61" addr="50749" type="exec" exec="12" />
+		<RemoteDMX index="62" addr="50750" type="exec" exec="12" button_type="fader" />
+		<RemoteDMX index="63" addr="50751" type="exec" exec="12" button_type="above_fader" />
+		<RemoteDMX index="64" addr="50752" type="exec" exec="12" button_type="top" />
+		<RemoteDMX index="65" addr="50753" type="exec" exec="113" />
+		<RemoteDMX index="66" addr="50754" type="exec" exec="13" />
+		<RemoteDMX index="67" addr="50755" type="exec" exec="13" button_type="fader" />
+		<RemoteDMX index="68" addr="50756" type="exec" exec="13" button_type="above_fader" />
+		<RemoteDMX index="69" addr="50757" type="exec" exec="13" button_type="top" />
+		<RemoteDMX index="70" addr="50758" type="exec" exec="114" />
+		<RemoteDMX index="71" addr="50759" type="exec" exec="14" />
+		<RemoteDMX index="72" addr="50760" type="exec" exec="14" button_type="fader" />
+		<RemoteDMX index="73" addr="50761" type="exec" exec="14" button_type="above_fader" />
+		<RemoteDMX index="74" addr="50762" type="exec" exec="14" button_type="top" />
+		<RemoteDMX index="75" addr="50763" type="exec" exec="115" />
+		<RemoteDMX index="76" addr="50764" type="exec" exec="15" />
+		<RemoteDMX index="77" addr="50765" type="exec" exec="15" button_type="fader" />
+		<RemoteDMX index="78" addr="50766" type="exec" exec="15" button_type="above_fader" />
+		<RemoteDMX index="79" addr="50767" type="exec" exec="15" button_type="top" />
+		<RemoteDMX index="80" addr="50768" type="exec" exec="116" />
+		<RemoteDMX index="81" addr="50769" type="exec" exec="16" />
+		<RemoteDMX index="82" addr="50770" type="exec" exec="16" button_type="fader" />
+		<RemoteDMX index="83" addr="50771" type="exec" exec="16" button_type="above_fader" />
+		<RemoteDMX index="84" addr="50772" type="exec" exec="16" button_type="top" />
+		<RemoteDMX index="85" addr="50773" type="exec" exec="117" />
+		<RemoteDMX index="86" addr="50774" type="exec" exec="17" />
+		<RemoteDMX index="87" addr="50775" type="exec" exec="17" button_type="fader" />
+		<RemoteDMX index="88" addr="50776" type="exec" exec="17" button_type="above_fader" />
+		<RemoteDMX index="89" addr="50777" type="exec" exec="17" button_type="top" />
+		<RemoteDMX index="90" addr="50778" type="exec" exec="118" />
+		<RemoteDMX index="91" addr="50779" type="exec" exec="18" />
+		<RemoteDMX index="92" addr="50780" type="exec" exec="18" button_type="fader" />
+		<RemoteDMX index="93" addr="50781" type="exec" exec="18" button_type="above_fader" />
+		<RemoteDMX index="94" addr="50782" type="exec" exec="18" button_type="top" />
+		<RemoteDMX index="95" addr="50783" type="exec" exec="119" />
+		<RemoteDMX index="96" addr="50784" type="exec" exec="19" />
+		<RemoteDMX index="97" addr="50785" type="exec" exec="19" button_type="fader" />
+		<RemoteDMX index="98" addr="50786" type="exec" exec="19" button_type="above_fader" />
+		<RemoteDMX index="99" addr="50787" type="exec" exec="19" button_type="top" />
+		<RemoteDMX index="100" addr="50788" type="exec" exec="120" />
+		<RemoteDMX index="101" addr="50789" type="exec" exec="20" />
+		<RemoteDMX index="102" addr="50790" type="exec" exec="20" button_type="fader" />
+		<RemoteDMX index="103" addr="50791" type="exec" exec="20" button_type="above_fader" />
+		<RemoteDMX index="104" addr="50792" type="exec" exec="20" button_type="top" />
+		<RemoteDMX index="105" addr="50793" type="exec" exec="121" />
+		<RemoteDMX index="106" addr="50794" type="exec" exec="21" />
+		<RemoteDMX index="107" addr="50795" type="exec" exec="21" button_type="fader" />
+		<RemoteDMX index="108" addr="50796" type="exec" exec="21" button_type="above_fader" />
+		<RemoteDMX index="109" addr="50797" type="exec" exec="21" button_type="top" />
+		<RemoteDMX index="110" addr="50798" type="exec" exec="122" />
+		<RemoteDMX index="111" addr="50799" type="exec" exec="22" />
+		<RemoteDMX index="112" addr="50800" type="exec" exec="22" button_type="fader" />
+		<RemoteDMX index="113" addr="50801" type="exec" exec="22" button_type="above_fader" />
+		<RemoteDMX index="114" addr="50802" type="exec" exec="22" button_type="top" />
+		<RemoteDMX index="115" addr="50803" type="exec" exec="123" />
+		<RemoteDMX index="116" addr="50804" type="exec" exec="23" />
+		<RemoteDMX index="117" addr="50805" type="exec" exec="23" button_type="fader" />
+		<RemoteDMX index="118" addr="50806" type="exec" exec="23" button_type="above_fader" />
+		<RemoteDMX index="119" addr="50807" type="exec" exec="23" button_type="top" />
+		<RemoteDMX index="120" addr="50808" type="exec" exec="124" />
+		<RemoteDMX index="121" addr="50809" type="exec" exec="24" />
+		<RemoteDMX index="122" addr="50810" type="exec" exec="24" button_type="fader" />
+		<RemoteDMX index="123" addr="50811" type="exec" exec="24" button_type="above_fader" />
+		<RemoteDMX index="124" addr="50812" type="exec" exec="24" button_type="top" />
+		<RemoteDMX index="125" addr="50813" type="exec" exec="125" />
+		<RemoteDMX index="126" addr="50814" type="exec" exec="25" />
+		<RemoteDMX index="127" addr="50815" type="exec" exec="25" button_type="fader" />
+		<RemoteDMX index="128" addr="50816" type="exec" exec="25" button_type="above_fader" />
+		<RemoteDMX index="129" addr="50817" type="exec" exec="25" button_type="top" />
+		<RemoteDMX index="130" addr="50818" type="exec" exec="126" />
+		<RemoteDMX index="131" addr="50819" type="exec" exec="26" />
+		<RemoteDMX index="132" addr="50820" type="exec" exec="26" button_type="fader" />
+		<RemoteDMX index="133" addr="50821" type="exec" exec="26" button_type="above_fader" />
+		<RemoteDMX index="134" addr="50822" type="exec" exec="26" button_type="top" />
+		<RemoteDMX index="135" addr="50823" type="exec" exec="127" />
+		<RemoteDMX index="136" addr="50824" type="exec" exec="27" />
+		<RemoteDMX index="137" addr="50825" type="exec" exec="27" button_type="fader" />
+		<RemoteDMX index="138" addr="50826" type="exec" exec="27" button_type="above_fader" />
+		<RemoteDMX index="139" addr="50827" type="exec" exec="27" button_type="top" />
+		<RemoteDMX index="140" addr="50828" type="exec" exec="128" />
+		<RemoteDMX index="141" addr="50829" type="exec" exec="28" />
+		<RemoteDMX index="142" addr="50830" type="exec" exec="28" button_type="fader" />
+		<RemoteDMX index="143" addr="50831" type="exec" exec="28" button_type="above_fader" />
+		<RemoteDMX index="144" addr="50832" type="exec" exec="28" button_type="top" />
+		<RemoteDMX index="145" addr="50833" type="exec" exec="129" />
+		<RemoteDMX index="146" addr="50834" type="exec" exec="29" />
+		<RemoteDMX index="147" addr="50835" type="exec" exec="29" button_type="fader" />
+		<RemoteDMX index="148" addr="50836" type="exec" exec="29" button_type="above_fader" />
+		<RemoteDMX index="149" addr="50837" type="exec" exec="29" button_type="top" />
+		<RemoteDMX index="150" addr="50838" type="hardkey" tasten_code="ButtonPageMinus" />
+		<RemoteDMX index="151" addr="50839" type="hardkey" tasten_code="ButtonPagePlus" />
+		<RemoteDMX index="152" addr="50840" type="hardkey" tasten_code="FaderPageMinus" />
+		<RemoteDMX index="153" addr="50841" type="hardkey" tasten_code="FaderPagePlus" />
+		<RemoteDMX index="154" addr="50842" type="hardkey" tasten_code="ChannelPageMinus" />
+		<RemoteDMX index="155" addr="50843" type="hardkey" tasten_code="ChannelPagePlus" />
+		<RemoteDMX index="156" addr="50844" type="hardkey" tasten_code="Fix" />
+		<RemoteDMX index="157" addr="50845" type="hardkey" tasten_code="Select" />
+		<RemoteDMX index="158" addr="50846" type="hardkey" tasten_code="Off" />
+		<RemoteDMX index="159" addr="50847" type="hardkey" tasten_code="Temp" />
+		<RemoteDMX index="160" addr="50848" type="hardkey" tasten_code="Top" />
+		<RemoteDMX index="161" addr="50849" type="hardkey" tasten_code="On" />
+		<RemoteDMX index="162" addr="50850" type="hardkey" tasten_code="&lt;&lt;&lt;" />
+		<RemoteDMX index="163" addr="50851" type="hardkey" tasten_code="Learn" />
+		<RemoteDMX index="164" addr="50852" type="hardkey" tasten_code="&gt;&gt;&gt;" />
+		<RemoteDMX index="165" addr="50853" type="hardkey" tasten_code="GoMinus" />
+		<RemoteDMX index="166" addr="50854" type="hardkey" tasten_code="Pause" />
+		<RemoteDMX index="167" addr="50855" type="hardkey" tasten_code="GoPlus" />
+		<RemoteDMX index="168" addr="50856" type="hardkey" tasten_code="View" />
+		<RemoteDMX index="169" addr="50857" type="hardkey" tasten_code="Effect" />
+		<RemoteDMX index="170" addr="50858" type="hardkey" tasten_code="Goto" />
+		<RemoteDMX index="171" addr="50859" type="hardkey" tasten_code="Page" />
+		<RemoteDMX index="172" addr="50860" type="hardkey" tasten_code="Macro" />
+		<RemoteDMX index="173" addr="50861" type="hardkey" tasten_code="Preset" />
+		<RemoteDMX index="174" addr="50862" type="hardkey" tasten_code="Sequence" />
+		<RemoteDMX index="175" addr="50863" type="hardkey" tasten_code="Cue" />
+		<RemoteDMX index="176" addr="50864" type="hardkey" tasten_code="Executor" />
+		<RemoteDMX index="177" addr="50865" type="hardkey" tasten_code="Channel" />
+		<RemoteDMX index="178" addr="50866" type="hardkey" tasten_code="Fixture" />
+		<RemoteDMX index="179" addr="50867" type="hardkey" tasten_code="Group" />
+		<RemoteDMX index="180" addr="50868" type="hardkey" tasten_code="Delete" />
+		<RemoteDMX index="181" addr="50869" type="hardkey" tasten_code="Blind" />
+		<RemoteDMX index="182" addr="50870" type="hardkey" tasten_code="Copy" />
+		<RemoteDMX index="183" addr="50871" type="hardkey" tasten_code="Freeze" />
+		<RemoteDMX index="184" addr="50872" type="hardkey" tasten_code="Move" />
+		<RemoteDMX index="185" addr="50873" type="hardkey" tasten_code="Preview" />
+		<RemoteDMX index="186" addr="50874" type="hardkey" tasten_code="Assign" />
+		<RemoteDMX index="187" addr="50875" type="hardkey" tasten_code="Align" />
+		<RemoteDMX index="188" addr="50876" type="hardkey" tasten_code="Time" />
+		<RemoteDMX index="189" addr="50877" type="hardkey" tasten_code="Escape" />
+		<RemoteDMX index="190" addr="50878" type="hardkey" tasten_code="Edit" />
+		<RemoteDMX index="191" addr="50879" type="hardkey" tasten_code="Oops" />
+		<RemoteDMX index="192" addr="50880" type="hardkey" tasten_code="Update" />
+		<RemoteDMX index="193" addr="50881" type="hardkey" tasten_code="Clear" />
+		<RemoteDMX index="194" addr="50882" type="hardkey" tasten_code="Store" />
+		<RemoteDMX index="195" addr="50883" type="hardkey" tasten_code="7" />
+		<RemoteDMX index="196" addr="50884" type="hardkey" tasten_code="8" />
+		<RemoteDMX index="197" addr="50885" type="hardkey" tasten_code="9" />
+		<RemoteDMX index="198" addr="50886" type="hardkey" tasten_code="Plus" />
+		<RemoteDMX index="199" addr="50887" type="hardkey" tasten_code="4" />
+		<RemoteDMX index="200" addr="50888" type="hardkey" tasten_code="5" />
+		<RemoteDMX index="201" addr="50889" type="hardkey" tasten_code="6" />
+		<RemoteDMX index="202" addr="50890" type="hardkey" tasten_code="Thru" />
+		<RemoteDMX index="203" addr="50891" type="hardkey" tasten_code="1" />
+		<RemoteDMX index="204" addr="50892" type="hardkey" tasten_code="2" />
+		<RemoteDMX index="205" addr="50893" type="hardkey" tasten_code="3" />
+		<RemoteDMX index="206" addr="50894" type="hardkey" tasten_code="Minus" />
+		<RemoteDMX index="207" addr="50895" type="hardkey" tasten_code="0" />
+		<RemoteDMX index="208" addr="50896" type="hardkey" tasten_code="Dot" />
+		<RemoteDMX index="209" addr="50897" type="hardkey" tasten_code="If" />
+		<RemoteDMX index="210" addr="50898" type="hardkey" tasten_code="At" />
+		<RemoteDMX index="211" addr="50899" type="hardkey" tasten_code="MA" />
+		<RemoteDMX index="212" addr="50900" type="hardkey" tasten_code="Please" />
+		<RemoteDMX index="213" addr="50901" type="hardkey" tasten_code="Full" />
+		<RemoteDMX index="214" addr="50902" type="hardkey" tasten_code="Highlight" />
+		<RemoteDMX index="215" addr="50903" type="hardkey" tasten_code="Solo" />
+		<RemoteDMX index="216" addr="50904" type="hardkey" tasten_code="Up" />
+		<RemoteDMX index="217" addr="50905" type="hardkey" tasten_code="Previous" />
+		<RemoteDMX index="218" addr="50906" type="hardkey" tasten_code="Set" />
+		<RemoteDMX index="219" addr="50907" type="hardkey" tasten_code="Next" />
+		<RemoteDMX index="220" addr="50908" type="hardkey" tasten_code="Down" />
+		<RemoteDMX index="221" addr="50909" type="hardkey" tasten_code="Tools" />
+		<RemoteDMX index="222" addr="50910" type="hardkey" tasten_code="Setup" />
+		<RemoteDMX index="223" addr="50911" type="hardkey" tasten_code="Backup" />
+		<RemoteDMX index="224" addr="50912" type="hardkey" tasten_code="Blackout" />
+	</DMXRemotes>
+</MA>
