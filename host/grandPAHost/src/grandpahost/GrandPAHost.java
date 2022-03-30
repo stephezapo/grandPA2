@@ -7,6 +7,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.util.Arrays;
+import java.util.Locale;
 import javax.swing.UIManager;
 import org.apache.commons.net.telnet.TelnetClient;
 
@@ -48,18 +49,46 @@ public class GrandPAHost implements Runnable
             
             new Thread(new GrandPAHost()).start();
 
-            Send("Login \"web\"");
+            Send("Login \"web\" \"pass\"", false);
+            System.out.println("Logged into TelNet");
         }
         catch(Exception ex)
         {
             ex.printStackTrace();
         }
     }
-    
-    protected static void Send(String command)
+
+    protected static void SendKey(Constants.HardwareKey key, boolean pressed)
     {
         try
         {
+            String command;
+            if(pressed)
+            {
+                command = "LUA \"gma.canbus.hardkey(" + key.getValue() + ", true, false)\"\n";
+            }
+            else
+            {
+                command = "LUA \"gma.canbus.hardkey(" + key.getValue() + ", false, false)\"\n";
+            }
+
+            out.write(command.getBytes());
+            out.flush();
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+    }
+
+    protected static void Send(String command, boolean lua)
+    {
+        try
+        {
+            if (lua)
+            {
+                command = "Lua " + "\"" + command + "\"";
+            }
             command += "\n";
             out.write(command.getBytes());
             out.flush();

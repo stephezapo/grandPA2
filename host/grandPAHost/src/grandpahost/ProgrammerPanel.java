@@ -904,42 +904,42 @@ public class ProgrammerPanel extends javax.swing.JPanel implements MouseListener
 
     private void wheel1LeftActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_wheel1LeftActionPerformed
     {//GEN-HEADEREND:event_wheel1LeftActionPerformed
-        GrandPAHost.Send("Feature $feature.1 At - 1");
+        GrandPAHost.Send("gma.canbus.encoder(0, -1, pressed)", true);
     }//GEN-LAST:event_wheel1LeftActionPerformed
 
     private void wheel1RightActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_wheel1RightActionPerformed
     {//GEN-HEADEREND:event_wheel1RightActionPerformed
-        GrandPAHost.Send("Feature $feature.1 At + 1");
+        GrandPAHost.Send("gma.canbus.encoder(0, 1, pressed)", true);
     }//GEN-LAST:event_wheel1RightActionPerformed
 
     private void wheel2LeftActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_wheel2LeftActionPerformed
     {//GEN-HEADEREND:event_wheel2LeftActionPerformed
-        GrandPAHost.Send("Feature $feature.2 At - 1");
+        GrandPAHost.Send("gma.canbus.encoder(1, -1, pressed)", true);
     }//GEN-LAST:event_wheel2LeftActionPerformed
 
     private void wheel2RightActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_wheel2RightActionPerformed
     {//GEN-HEADEREND:event_wheel2RightActionPerformed
-        GrandPAHost.Send("Feature $feature.2 At + 1");
+        GrandPAHost.Send("gma.canbus.encoder(1, 1, pressed)", true);
     }//GEN-LAST:event_wheel2RightActionPerformed
 
     private void wheel3LeftActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_wheel3LeftActionPerformed
     {//GEN-HEADEREND:event_wheel3LeftActionPerformed
-        GrandPAHost.Send("Feature $feature.3 At - 1");
+        GrandPAHost.Send("gma.canbus.encoder(2, -1, pressed)", true);
     }//GEN-LAST:event_wheel3LeftActionPerformed
 
     private void wheel3RightActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_wheel3RightActionPerformed
     {//GEN-HEADEREND:event_wheel3RightActionPerformed
-        GrandPAHost.Send("Feature $feature.3 At + 1");
+        GrandPAHost.Send("gma.canbus.encoder(2, 1, pressed)", true);
     }//GEN-LAST:event_wheel3RightActionPerformed
 
     private void wheel4LeftActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_wheel4LeftActionPerformed
     {//GEN-HEADEREND:event_wheel4LeftActionPerformed
-        GrandPAHost.Send("Feature $feature.4 At - 1");
+        GrandPAHost.Send("gma.canbus.encoder(3, -1, pressed)", true);
     }//GEN-LAST:event_wheel4LeftActionPerformed
 
     private void wheel4RightActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_wheel4RightActionPerformed
     {//GEN-HEADEREND:event_wheel4RightActionPerformed
-        GrandPAHost.Send("Feature $feature.4 At + 1");
+        GrandPAHost.Send("gma.canbus.encoder(3, 1, pressed)",true);
     }//GEN-LAST:event_wheel4RightActionPerformed
 
 
@@ -1254,8 +1254,11 @@ public class ProgrammerPanel extends javax.swing.JPanel implements MouseListener
         else if(me.getSource().equals(buttonTools))
             Artnet.Get().sendArtnet(222, 255);
             //MIDI.sendNoteMessage((short)0, (short)66, (short)127, false);
-        else if(me.getSource().equals(buttonSetup))
+        else if(me.getSource().equals(buttonSetup)) {
             Artnet.Get().sendArtnet(223, 255);
+            GrandPAHost.SendKey(Constants.HardwareKey.SETUP, true);
+            GrandPAHost.SendKey(Constants.HardwareKey.SETUP, false);
+            }
             //MIDI.sendNoteMessage((short)0, (short)67, (short)127, false);
         else if(me.getSource().equals(buttonBackup))
             Artnet.Get().sendArtnet(224, 255);
@@ -1375,7 +1378,12 @@ public class ProgrammerPanel extends javax.swing.JPanel implements MouseListener
              Artnet.Get().sendArtnet(189, 0);
             //MIDI.sendNoteMessage((short)0, (short)33, (short)0, true);
         else if(me.getSource().equals(buttonEsc))
+        {
+            GrandPAHost.SendKey(Constants.HardwareKey.ESC, true);
+            GrandPAHost.SendKey(Constants.HardwareKey.ESC, false);
             Artnet.Get().sendArtnet(190, 0);
+        }
+
             //MIDI.sendNoteMessage((short)0, (short)34, (short)0, true);
         else if(me.getSource().equals(buttonEdit))
             Artnet.Get().sendArtnet(191, 0);
@@ -1506,6 +1514,6 @@ public class ProgrammerPanel extends javax.swing.JPanel implements MouseListener
     public void stateChanged(ChangeEvent ce)
     {
         if(ce.getSource().equals(sliderGrandMaster))
-            GrandPAHost.Send("SpecialMaster \"grandmaster\" . \"grand\" At " + ((double)sliderGrandMaster.getValue()/10.0));
+            GrandPAHost.Send("SpecialMaster \"grandmaster\" . \"grand\" At " + ((double)sliderGrandMaster.getValue()/10.0), false);
     }
 }
