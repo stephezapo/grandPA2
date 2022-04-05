@@ -3,7 +3,7 @@ FIRMWARE FOR grandPA2 COMMAND WING (HARDWARE V 1.0)
 */
 
 int analogIns[] = {A1, A0, A2}; // Fader A, Fader B, Grand Master
-int buttonCols[] = {17, 16, 15, 14, 2, 3, 4, 5, 6, 7, 8, 9, 18, 19, 20, 21}; 
+int buttonCols[] = {28, 30, 32, 35, 36, 38, 40, 42, 44, 46}; 
 int ledCols[] = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2}; 
 int rows[] = {53, 51, 49, 47, 45, 43, 41, 39}; 
 
@@ -114,7 +114,8 @@ void loop()
 
   if(buttons!="")
   {
-    //Serial.print(buttons);
+    change = true;
+    Serial.print(buttons);
   }
 
   if(change)
