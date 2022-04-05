@@ -3,27 +3,27 @@ FIRMWARE FOR grandPA2 COMMAND WING (HARDWARE V 1.0)
 */
 
 int analogIns[] = {A1, A0, A2}; // Fader A, Fader B, Grand Master
-int buttonCols[] = {28, 30, 32, 35, 36, 38, 40, 42, 44, 46}; 
+int buttonCols[] = {28, 30, 32, 34, 36, 38, 40, 42, 44, 46}; 
 int ledCols[] = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2}; 
 int rows[] = {53, 51, 49, 47, 45, 43, 41, 39}; 
 
 int analogVals[] = {0, 0, 0};
 int oldAnalogVals[] = {0, 0, 0};
-bool buttonVals[8][16] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+bool buttonVals[8][10] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
 int i = 0;
 int j = 0;
 unsigned long now = 0;
 unsigned long last = 0;
 int ledCounter = 0;
-int FADER_THRESHOLD = 2; //minimum difference to be detected as fader value change
+int FADER_THRESHOLD = 1; //minimum difference to be detected as fader value change
 
 void setup()
 {
@@ -105,6 +105,16 @@ void loop()
     if(abs(analogVals[i] - oldAnalogVals[i])>=FADER_THRESHOLD)
     {
       change = true;
+      
+      switch(i)
+      {
+        case 0: Serial.print("A:");
+                break;
+        case 1: Serial.print("B:");
+                break;
+        case 2: Serial.print("C:");
+                break;
+      }
       Serial.print(analogVals[i]);
       Serial.print(" ");
     }
@@ -144,6 +154,10 @@ String getButtonID(int row, int col, bool up)
   if(up)
   {
     s += "-";
+  }
+  else
+  {
+    s += "+";
   }
 
   return s;
