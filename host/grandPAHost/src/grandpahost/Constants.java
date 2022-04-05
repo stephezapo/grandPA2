@@ -53,7 +53,7 @@ public class Constants
         SMALL_PAUSE(51),
         SMALL_GO_PLUS(52),
         OOPS(53),
-        ESC(54),
+        ESCAPE(54),
         EDIT(55),
         GOTO(56),
         UPDATE(57),
