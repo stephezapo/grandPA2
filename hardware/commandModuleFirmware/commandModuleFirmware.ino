@@ -6,6 +6,8 @@ int analogIns[] = {A1, A0, A2}; // Fader A, Fader B, Grand Master
 int buttonCols[] = {28, 30, 32, 34, 36, 38, 40, 42, 44, 46}; 
 int ledCols[] = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2}; 
 int rows[] = {53, 51, 49, 47, 45, 43, 41, 39}; 
+int encoders[] = {{}, {}, {}, {}};
+int encoderbuttons[] = {};
 
 int analogVals[] = {0, 0, 0};
 int oldAnalogVals[] = {0, 0, 0};
