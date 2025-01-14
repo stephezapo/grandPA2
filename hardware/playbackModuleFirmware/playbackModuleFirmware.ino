@@ -1,13 +1,18 @@
 /*
-
+Serial data output format: ([] equals one byte)
+[exec fader no.][value high byte][value low byte] fader numbers: 1..15, values 0..1023
+[exec button no.][1 or 0] button numbers: 101..160, values 1 (pressed) and 0 (released)
+[page button no.][1 or 0] button numbers 201..206, values 1 (pressed) and 0 (released)
 */
 
 int analogIns[] = {A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14};
 int buttonCols[] = {17, 16, 15, 14, 2, 3, 4, 5, 6, 7, 8, 9, 18, 19, 20, 21}; 
 int ledCols[] = {37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22}; 
 int rows[] = {39, 41, 43, 45, 47, 49, 51, 53}; 
+byte myInts[256];
+unsigned int sendLength = 0;
 
-int analogVals[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+unsigned int analogVals[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 bool buttonVals[8][16] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                          {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -45,6 +50,18 @@ void loop()
 {
   now = millis();
 
+  // Read Faders
+  unsigned int aValue = 0;
+  for(j = 0; j<16; j++)
+  {
+    aValue = 1023 - analogRead(analogIns[j]);
+    if(abs(analogVals[i]-aValue)>1)
+    {
+      
+    }
+
+  }
+
   if(now-last>250)
   {
     ledCounter = (ledCounter+1) % 8;
@@ -72,6 +89,8 @@ void loop()
     }
 
     digitalWrite(rows[i], HIGH);
+
+    
     
     for(j = 0; j<16; j++)
     {
