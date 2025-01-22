@@ -9,18 +9,15 @@ int analogIns[] = {A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A
 int buttonCols[] = {17, 16, 15, 14, 2, 3, 4, 5, 6, 7, 8, 9, 18, 19, 20, 21}; 
 int ledCols[] = {37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22}; 
 int rows[] = {39, 41, 43, 45, 47, 49, 51, 53}; 
+int playbackRows[] = {39, 41, 43, 49}; 
 byte dataOut[256];
 unsigned int index = 0;
 
-unsigned int analogVals[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-bool buttonVals[8][16] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+unsigned int analogVals[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+bool playbackButtonVals[4][15] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
 int i = 0;
 int j = 0;
@@ -72,7 +69,7 @@ void loop()
 
   }
 
-  /*if(now-last>250)
+  if(now-last>1000)
   {
     ledCounter = (ledCounter+1) % 8;
     last = now;
@@ -81,13 +78,15 @@ void loop()
   String buttons = "";
   bool buttonState = 0;
   
-  for(i = 0; i<8; i++)
+  for(i = 0; i<4; i++)
   {
-    digitalWrite(rows[(i+7)%8], LOW);
+    digitalWrite(playbackRows[(i+3)%4], LOW);
+    digitalWrite(playbackRows[i], HIGH);
 
-    for(j = 0; j<16; j++)
+    /*
+    // LEDs
+    for(j = 0; j<15; j++)
     {
-      //LEDS
       if(ledCounter==i)
       {
         digitalWrite(ledCols[j], HIGH);
@@ -96,33 +95,30 @@ void loop()
       {
         digitalWrite(ledCols[j], LOW);
       }
-    }
+    }*/
 
-    digitalWrite(rows[i], HIGH);
-
-    
-    
-    for(j = 0; j<16; j++)
+    // Playback Buttons
+    for(j = 0; j<15; j++)
     {
-      buttonState = digitalRead(buttonCols[j]) == HIGH;
+      buttonState = digitalRead(buttonCols[j]) == LOW;
+      int buttonNr = 101 + i*15 + j;
 
-      if(buttonState && !buttonVals[i][j])
+      if(buttonState && !playbackButtonVals[i][j])
       {
-        buttons += getButtonID(i, j, true) + " ";
+        dataOut[index] = buttonNr;
+        dataOut[index+1] = 1;
+        index+=2;
       }
-      else if(!buttonState && buttonVals[i][j])
+      else if(!buttonState && playbackButtonVals[i][j])
       {
-        buttons += getButtonID(i, j, false) + " ";
+        dataOut[index] = buttonNr;
+        dataOut[index+1] = 0;
+        index+=2;
       }
 
-      buttonVals[i][j] = buttonState;
-      
-      if(i==0 && j<15)
-      {
-        analogVals[i] = 1023 - analogRead(analogIns[i]);
-      }
+      playbackButtonVals[i][j] = buttonState;
     }
-  }*/
+  }
   
   /*for(i = 0; i<2; i++)
   {
@@ -150,27 +146,4 @@ void loop()
   }
   
   delay(1);
-}
-
-String getButtonID(int row, int col, bool up)
-{
-  String s = "";
-  row += 1;
-  col += 1;
-
-  s += row;
-
-  if(col<10)
-  {
-    s+= "0";
-  }
-
-  s += col;
-
-  if(up)
-  {
-    s += "-";
-  }
-
-  return s;
 }
