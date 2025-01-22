@@ -119,29 +119,10 @@ void loop()
       playbackButtonVals[i][j] = buttonState;
     }
   }
-  
-  /*for(i = 0; i<2; i++)
-  {
-    Serial.print(analogVals[i]);
-    Serial.print(" ");
-  }
-
-  Serial.print(buttons);
-
-  Serial.println();*/
-
-  /*if(buttons!="")
-  {
-    Serial.println(buttons);
-  }*/
 
   if(index>0)
   {
-    for(i = 0; i< index; i++)
-    {
-      Serial.print(dataOut[i]);
-      Serial.print(" ");
-    }
+    Serial.write(dataOut, index);
     Serial.println();
   }
   
