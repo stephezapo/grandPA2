@@ -9,8 +9,8 @@ int analogIns[] = {A0, A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A
 int buttonCols[] = {17, 16, 15, 14, 2, 3, 4, 5, 6, 7, 8, 9, 18, 19, 20, 21}; 
 int ledCols[] = {37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22}; 
 int rows[] = {39, 41, 43, 45, 47, 49, 51, 53}; 
-byte myInts[256];
-unsigned int sendLength = 0;
+byte dataOut[256];
+unsigned int index = 0;
 
 unsigned int analogVals[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 bool buttonVals[8][16] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -50,19 +50,29 @@ void loop()
 {
   now = millis();
 
+  index = 0;
+
   // Read Faders
   unsigned int aValue = 0;
-  for(j = 0; j<16; j++)
+  for(i = 0; i<15; i++)
   {
-    aValue = 1023 - analogRead(analogIns[j]);
-    if(abs(analogVals[i]-aValue)>1)
+    aValue = 1023 - analogRead(analogIns[i]);
+    if(aValue < 5)
     {
-      
+      aValue = 0;
+    }
+    if(abs(analogVals[i]-aValue)>4 || (aValue == 0 && analogVals[i]>0))
+    {
+      dataOut[index] = i+1;
+      dataOut[index+1] = highByte(aValue);
+      dataOut[index+2] = lowByte(aValue);
+      index += 3;
+      analogVals[i] = aValue;
     }
 
   }
 
-  if(now-last>250)
+  /*if(now-last>250)
   {
     ledCounter = (ledCounter+1) % 8;
     last = now;
@@ -112,7 +122,7 @@ void loop()
         analogVals[i] = 1023 - analogRead(analogIns[i]);
       }
     }
-  }
+  }*/
   
   /*for(i = 0; i<2; i++)
   {
@@ -124,9 +134,19 @@ void loop()
 
   Serial.println();*/
 
-  if(buttons!="")
+  /*if(buttons!="")
   {
     Serial.println(buttons);
+  }*/
+
+  if(index>0)
+  {
+    for(i = 0; i< index; i++)
+    {
+      Serial.print(dataOut[i]);
+      Serial.print(" ");
+    }
+    Serial.println();
   }
   
   delay(1);
