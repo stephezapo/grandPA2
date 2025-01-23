@@ -10,6 +10,7 @@ int buttonCols[] = {17, 16, 15, 14, 2, 3, 4, 5, 6, 7, 8, 9, 18, 19, 20, 21};
 int ledCols[] = {37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22}; 
 int rows[] = {39, 41, 43, 45, 47, 49, 51, 53}; 
 int playbackRows[] = {39, 41, 43, 49}; 
+int pageRows[] = {39, 41, 43, 45, 47, 49};
 byte dataOut[256];
 unsigned int index = 0;
 
@@ -18,6 +19,8 @@ bool playbackButtonVals[4][15] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+
+bool pageButtonVals[6] = {0, 0, 0, 0, 0, 0};
 
 int i = 0;
 int j = 0;
@@ -119,6 +122,33 @@ void loop()
       playbackButtonVals[i][j] = buttonState;
     }
   }
+  digitalWrite(playbackRows[3], LOW);
+
+  // Page Buttons
+  for(i = 0; i<6; i++)
+  {
+    digitalWrite(pageRows[(i+5)%6], LOW);
+    digitalWrite(pageRows[i], HIGH);
+
+    buttonState = digitalRead(buttonCols[15]) == LOW;
+    int buttonNr = 161 + i;
+
+    if(buttonState && !pageButtonVals[i])
+    {
+      dataOut[index] = buttonNr;
+      dataOut[index+1] = 1;
+      index+=2;
+    }
+    else if(!buttonState && pageButtonVals[i])
+    {
+      dataOut[index] = buttonNr;
+      dataOut[index+1] = 0;
+      index+=2;
+    }
+
+    pageButtonVals[i] = buttonState;
+  }
+  digitalWrite(pageRows[5], LOW);
 
   if(index>0)
   {
